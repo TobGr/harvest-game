@@ -19,7 +19,7 @@ export class ChoosePopupComponent {
 		if (seed.cost <= this.data.coins) {
 			this.matDialogRef.close(seed);
 		} else {
-			this.errorMsg = "Not enough money!";
+			this.errorMsg = "Not enough money";
 			this.showErrorMsg = true;
 			
 			var that = this;
