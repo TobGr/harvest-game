@@ -1,0 +1,201 @@
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-bg {
+	font-size: 18px;
+	padding-top: 40px;
+    padding-bottom: 18px;
+    border-radius: 32px;
+	background-color: white;
+	box-shadow: 5px 3px 9px 4px #0000008a;
+}
+
+.game-content {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.fields-grid {
+	flex-wrap: wrap;
+	width: 450px;
+	margin-top: 30px;
+}
+
+.field-outer-container {
+	width: 130px;
+	height: 130px;
+}
+
+.field-inner-container {
+	position: relative;
+	width: calc(100% - 15px);
+	height: calc(100% - 15px);
+	flex-direction: column;
+	cursor: pointer;
+	color: white;
+}
+
+.field-bg {
+	position: relative;
+	background-image: url("../assets/images/field.png");
+	background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+	height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* YIELD */
+.yield-img {
+    width: 71px;
+    position: absolute;
+    top: -12px;
+    transform: scale(0);
+    transition: transform 0.1s linear;
+}
+
+img.yield-img.wheat {
+	width: 76px;
+    top: -8px;
+}
+
+.harvestable .active-crop.active-wheat .yield-img.wheat,
+.harvestable .active-crop.active-sunflower .yield-img.sunflower,
+.harvestable .active-crop.active-corn .yield-img.corn {
+	transform: scale(1);
+}
+
+
+/* FIELD STATUS */
+.field-status {
+	position: absolute;
+	z-index: 1;
+	top: -15px;
+	left: -15px;
+    width: 46px;
+    height: 46px;
+	border-radius: 50%;
+	color: #000000;
+	background-color: #f3f3f3;
+	/* box-shadow: 2px 2px 5px 0px rgb(0 0 0 / 36%);*/
+}
+
+.harvestable .field-status {
+	background-color: #8b1414;
+	animation: bgColorCycle 9s linear;
+}
+@keyframes bgColorCycle {
+	0% {
+		background-color: #f3f3f3;
+	}
+	15% {
+		background-color: #f9e422;
+	}
+	28% {
+		background-color: #8b1414;
+	}
+	100% {
+		background-color: #8b1414;
+	}
+}
+
+.counter {
+	position: absolute;
+	transition: 0.2s;
+	opacity: 1;
+}
+
+.harvest-img {
+	position: absolute;
+	transition: 0.5s;
+	width: 26px;
+	opacity: 0;
+}
+.harvestable .counter {
+	opacity: 0;
+}
+
+.harvestable .harvest-img {
+	opacity: 1;
+}
+
+
+
+/* INFO BAR */
+.info-bar {
+	width: calc(100% - 92px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-title {
+    padding: 5px 15px;
+    width: 157px;
+    height: 40px;
+    background: var(--button-color);
+    color: white;
+    border-radius: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.info-title > img {
+	margin-top: -5px;
+    height: 30px;
+    filter: drop-shadow(1px -1px 1px rgba(0, 0, 0, 0.2509803922));
+    transform: rotateZ(75deg);
+}
+
+.info-title > div {
+    padding-left: 5px;
+    font-weight: 500;
+}
+
+
+.info-right {
+	display: flex;
+}
+
+.reset-btn {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--button-color);
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+}
+
+.reset-btn > img {
+	height: 28px;
+	filter: invert(1);
+}
+
+.coins {
+    background: var(--button-color);
+    padding: 11px 14px;
+    border-radius: 40px;
+    min-width: 70px;
+	width: max-content;
+    justify-content: space-around;
+    color: white;
+	font-weight: 500;
+}
+
+.coins > img {
+    width: 26px;
+    padding-left: 4px;
+}

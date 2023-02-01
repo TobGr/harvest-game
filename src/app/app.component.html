@@ -1,0 +1,37 @@
+<div class="game-bg flex-center">
+
+	<div class="game-content">
+		<div class="info-bar">
+			<div class="info-title">
+				<img src="https://cdn-icons-png.flaticon.com/512/8323/8323532.png">
+				<div>Harvest Game</div>
+			</div>
+
+			<div class="coins flex-center">
+				{{coins.value}}
+				<img src="./assets/images/coins.png">
+			</div>
+			
+			<div class="reset-btn" (click)="reset()">
+				<img src="./assets/images/reset.png">
+			</div>
+		</div>
+	
+		<div class="fields-grid flex-center">
+			<div class="field-outer-container flex-center" *ngFor="let field of fields">
+				<div class="field-inner-container flex-center" [ngClass]="{'harvestable' : field.harvestable == true}" (click)="openDialog(field)">
+					<div class="field-status flex-center" *ngIf="field.growing">
+						<div class="counter">{{field.currentTime}}</div>
+						<img class="harvest-img" src="./assets/images/sickle.png">
+					</div>
+
+					<div class="field-bg {{field.crop}}" [ngClass]="{'active-crop ' : field.crop != ''}">
+						<img class="yield-img wheat" src="./assets/images/wheat.png">
+						<img class="yield-img corn" src="./assets/images/corn.png">
+						<img class="yield-img sunflower" src="./assets/images/sunflower.png">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
