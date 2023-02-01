@@ -24,9 +24,6 @@ export class AppComponent {
 		);
 
 		this.coins = new Coins(100);
-
-		console.log(this.fields);
-		console.log(this.seeds);
 	}
 
 	openDialog(field: Field) {
@@ -46,12 +43,8 @@ export class AppComponent {
 				
 				dialogRef.afterClosed().subscribe(
 					result => {
-						if (result != undefined) {
-							if (field.growing == false) {
-								if (result.id != field.activeSeed) {
-									this.grow(field, result);
-								}
-							}
+						if (result != undefined && !field.growing && result.id != field.activeSeed) {
+							this.grow(field, result);
 						}
 					}
 				);
@@ -173,4 +166,3 @@ class Coins {
 		this.value = newValue;
 	}
 }
-

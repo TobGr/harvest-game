@@ -4,13 +4,11 @@
     <div class="choose-popup-title">Choose Seed</div>
 
     <div class="choose-seed-container">
-
         <div class="choose-seed" (click)="choose(seed)" *ngFor="let seed of data.seeds">
             <img  class="seed-icon" src="{{seed.iconPath}}">
             <div class="seed-info-cost">Cost: {{seed.cost}}</div>
             <div class="seed-info-profit">Profit: {{seed.profit}}</div>
             <div class="seed-info-time">Time: {{seed.growthTime}}s</div>
         </div>
-
     </div>
 </div>
